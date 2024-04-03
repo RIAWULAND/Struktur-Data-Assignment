@@ -903,7 +903,17 @@ int main(){
 ```
 
 #### Output:
-![Cuplikan layar 2024-04-03 222717](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/bd7bbc24-04a9-47cc-b0a6-4051cbe4aea5)
+![Cuplikan layar 2024-04-03 225549](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/36418bac-f857-4d03-9ebb-6b88637e47b8)
+![Cuplikan layar 2024-04-03 225846](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/fead31ff-65db-407b-b3f3-0f4ffafdfe2c)
+![Cuplikan layar 2024-04-03 230148](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/3ac86d34-cee8-4c06-b70e-04362eec701d)
+![Cuplikan layar 2024-04-03 230306](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/7ba2326f-8b39-48c1-8149-049c3f07efb7)
+![Cuplikan layar 2024-04-03 230409](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/bffb40f3-31ef-4788-9732-5f227677a22c)
+![Cuplikan layar 2024-04-03 230650](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/f20ba6cc-86f5-4cac-b6cf-8d7d5d83b01c)
+![Cuplikan layar 2024-04-03 230859](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/5cce1ba5-560e-486c-8722-36039cab958d)
+![Cuplikan layar 2024-04-03 230957](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/53f7b37e-410f-496b-83fe-9a3d56f920ff)
+![Cuplikan layar 2024-04-03 231052](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/faa0094e-4123-4dfd-b05b-53927f411d03)
+![Cuplikan layar 2024-04-03 231139](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/1a82841a-5166-413b-afd2-caea56bf9d27)
+![Cuplikan layar 2024-04-03 231303](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/e5c37d91-20f6-47d5-8ada-1f73dcfa773e)
 
 Program di atas merupakan implementasi dari single linked list non-circular dalam bahasa C++. Program ini menyediakan menu untuk menambah, mengubah, menghapus, dan menampilkan data nama dan NIM mahasiswa. Pada awalnya, program akan menampilkan menu operasi yang tersedia. Pengguna dapat memilih operasi yang diinginkan dengan memasukkan nomor sesuai dengan menu yang ditampilkan. Setiap operasi memiliki fungsi yang sesuai, seperti tambah depan, tambah belakang, tambah di tengah, ubah depan, ubah belakang, ubah di tengah, hapus depan, hapus belakang, hapus di tengah, hapus list, dan tampilkan data. Pengguna diminta untuk memasukkan data nama dan NIM mahasiswa sesuai dengan instruksi yang ditampilkan setelah memilih operasi tambah. Data tersebut akan dimasukkan ke dalam linked list sesuai dengan operasi yang dipilih. Program akan terus berjalan dan menampilkan menu operasi hingga pengguna memilih untuk keluar dengan memasukkan angka 0.
 
