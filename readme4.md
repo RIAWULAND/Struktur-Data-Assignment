@@ -554,6 +554,8 @@ Program ini memiliki fungsi-fungsi dasar seperti tambah depan, tambah belakang, 
 ### 1. Buatlah program menu Linked List Non Circular untuk menyimpan Nama dan NIM mahasiswa, dengan menggunakan input dari user. 
 
 ```C++
+// ria wulandari
+// 2311102173
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -562,8 +564,8 @@ using namespace std;
 // Deklarasi struct Node untuk menyimpan informasi nama dan NIM mahasiswa
 struct Node
 {
-    string nama_164; // variabel untuk menyimpan nama mahasiswa
-    string nim_164; // variabel untuk menyimpan NIM mahasiswa
+    string nama; // variabel untuk menyimpan nama mahasiswa
+    string nim; // variabel untuk menyimpan NIM mahasiswa
     Node *next; // pointer yang menunjuk ke Node selanjutnya dalam linked list
 };
 
@@ -585,8 +587,8 @@ bool isEmpty(){
 // fungsi tambah depan
 void tambahDepan(string nama, string nim){
     Node *baru = new Node; // buat node baru
-    baru->nama_164 = nama; // isi data nama pada node baru
-    baru->nim_164 = nim; // isi data nim pada node baru
+    baru->nama = nama; // isi data nama pada node baru
+    baru->nim = nim; // isi data nim pada node baru
     baru->next = NULL;
 
     if (isEmpty()) // jika list kosong
@@ -603,8 +605,8 @@ void tambahDepan(string nama, string nim){
 // tambah Belakang
 void tambahBelakang(string nama, string nim){
     Node *baru = new Node; // buat node baru
-    baru->nama_164 = nama; // isi data nama pada node baru
-    baru->nim_164
+    baru->nama = nama; // isi data nama pada node baru
+    baru->nim
 = nim; // isi data nim pada node baru
     baru->next = NULL;
 
@@ -636,8 +638,8 @@ void tambahTengah(string nama, string nim, int posisi){
         cout << "Posisi bukan posisi tengah" << endl;
     }else {
         Node *baru = new Node; // Buat Node baru
-        baru->nama_164 = nama; // Isi data nama pada Node baru
-        baru->nim_164 = nim; // Isi data nim pada Node baru
+        baru->nama = nama; // Isi data nama pada Node baru
+        baru->nim = nim; // Isi data nim pada Node baru
 
         Node *bantu = head;
         for (int i = 1; i < posisi - 1; i++){
@@ -715,8 +717,8 @@ head->next;
 
 void ubahDepan(string nama, string nim){
     if (!isEmpty()){ // Cek apakah list tidak kosong
-        head->nama_164 = nama; // Ubah data pada node pertama
-        head->nim_164 = nim;
+        head->nama = nama; // Ubah data pada node pertama
+        head->nim = nim;
     }else {
         cout << "List masih kosong!" << endl;
     }
@@ -724,8 +726,8 @@ void ubahDepan(string nama, string nim){
 
 void ubahBelakang(string nama, string nim){
     if (!isEmpty()){ // Cek apakah list tidak kosong
-        tail->nama_164 = nama; // Ubah data pada node terakhir
-        tail->nim_164 = nim;
+        tail->nama = nama; // Ubah data pada node terakhir
+        tail->nim = nim;
     }else {
         cout << "List masih kosong!" << endl;
     }
@@ -747,8 +749,8 @@ void ubahTengah(string nama, string nim, int posisi){
                     bantu = bantu->next;
                     nomor++;
                 }
-            bantu->nama_164 = nama; // Ubah data pada node yang ditemukan
-            bantu->nim_164 = nim;
+            bantu->nama = nama; // Ubah data pada node yang ditemukan
+            bantu->nim= nim;
         }
     }else {
         cout << "List masih kosong!" << endl;
@@ -775,7 +777,7 @@ void tampilkan(){
         cout << "------------------------------" << endl;
         Node *bantu = head;
             while (bantu != NULL){
-                cout << "| " << setw(15) << left << bantu->nama_164  << "| " << setw(9) << left << bantu->nim_164 << " |" << endl;
+                cout << "| " << setw(15) << left << bantu->nama  << "| " << setw(9) << left << bantu->nim << " |" << endl;
                 bantu = bantu->next; // Geser ke node berikutnya
             }
         cout << "------------------------------" << endl;
@@ -918,7 +920,8 @@ int main(){
 Program di atas merupakan implementasi dari single linked list non-circular dalam bahasa C++. Program ini menyediakan menu untuk menambah, mengubah, menghapus, dan menampilkan data nama dan NIM mahasiswa. Pada awalnya, program akan menampilkan menu operasi yang tersedia. Pengguna dapat memilih operasi yang diinginkan dengan memasukkan nomor sesuai dengan menu yang ditampilkan. Setiap operasi memiliki fungsi yang sesuai, seperti tambah depan, tambah belakang, tambah di tengah, ubah depan, ubah belakang, ubah di tengah, hapus depan, hapus belakang, hapus di tengah, hapus list, dan tampilkan data. Pengguna diminta untuk memasukkan data nama dan NIM mahasiswa sesuai dengan instruksi yang ditampilkan setelah memilih operasi tambah. Data tersebut akan dimasukkan ke dalam linked list sesuai dengan operasi yang dipilih. Program akan terus berjalan dan menampilkan menu operasi hingga pengguna memilih untuk keluar dengan memasukkan angka 0.
 
 #### code Screenshot:
-![Screenshot (121)](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/8a5f7e55-9772-4367-9f87-a308c9f448e7)
+![Screenshot (124)](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/cf002f05-0495-4b07-91e0-8d633f586864)
+
 
 ## Kesimpulan
 Linked list non-circular dan circular adalah dua jenis struktur data yang digunakan untuk menyimpan dan mengorganisir data secara dinamis dalam urutan linear.
