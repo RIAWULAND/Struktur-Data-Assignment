@@ -31,11 +31,114 @@ Algoritma pencarian (searching algorithm) adalah algoritma yang menerima sebuah 
 ## Guided
 ### 1. Buatlah sebuah project dengan menggunakan sequential search sederhana untuk melakukan pencarian data.
 ```C++
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n = 10;
+    int data[n] = {9, 4, 1, 7, 5, 12, 4, 13, 4, 10};
+    int cari = 10;
+    bool ketemu = false;
+    int i;
+    // algoritma Sequential Search
+    for (i = 0; i < n; i++)
+    {
+        if (data[i] == cari)
+        {
+            ketemu = true;
+            break;
+        }
+    }
+    cout << "\t Program Sequential Search Sederhana\n " << endl;
+    cout<< "data: {9, 4, 1, 7, 5, 12, 4, 13, 4, 10}" << endl;
+    if (ketemu){
+        cout << "\n angka " << cari << " ditemukan pada indeks ke -" << i << endl;
+    }
+    else
+    {
+        cout << cari << " tidak dapat ditemukan pada data." <<endl;
+     }
+        
+        return 0;
+}
 ```
+Program di atas merupakan sebuah program sederhana yang menggunakan algoritma Sequential Search untuk mencari keberadaan suatu angka dalam sebuah array. Program ini menginisialisasi sebuah array dengan nama data yang berisi 10 angka, dan kemudian menentukan angka yang ingin dicari dalam array tersebut.
+
+Selanjutnya, program menggunakan loop for untuk melakukan pencarian secara berurutan pada setiap elemen array. Setiap elemen array diperiksa satu per satu. Jika angka yang dicari ditemukan pada suatu indeks, variabel ketemu diubah menjadi true dan program keluar dari loop.
+
+Setelah loop selesai, program mencetak hasil pencarian. Jika angka ditemukan, program mencetak indeks pertama di mana angka tersebut ditemukan. Jika tidak, program mencetak pesan bahwa angka tidak ditemukan dalam data.
 
 ### 2. Buatlah sebuah project untuk melakukan pencarian data dengan menggunakan Binary Search.
 ```C++
+#include <iostream>
+#include <conio.h>
+#include <iomanip>
+using namespace std;
+
+int dataArray[7] = {1, 8, 2, 5, 4, 9, 7};
+int cari;
+
+void selection_sort() {
+    int temp, min, i, j;
+    for (i = 0; i < 7; i++) {
+        min = i;
+        for (j = i + 1; j < 7; j++) {
+            if (dataArray[j] < dataArray[min]) {
+                min = j;
+            }
+        }
+        temp = dataArray[i];
+        dataArray[i] = dataArray[min];
+        dataArray[min] = temp;
+    }
+}
+
+void binarysearch() {
+    int awal, akhir, tengah;
+    bool b_flag = false;
+    awal = 0;
+    akhir = 6; // Corrected to 6 to match array bounds
+    while (!b_flag && awal <= akhir) {
+        tengah = (awal + akhir) / 2;
+        if (dataArray[tengah] == cari) {
+            b_flag = true;
+        } else if (dataArray[tengah] < cari) {
+            awal = tengah + 1;
+        } else {
+            akhir = tengah - 1;
+        }
+    }
+    if (b_flag) {
+        cout << "\nData ditemukan pada index ke- " << tengah << endl;
+    } else {
+        cout << "\nData tidak ditemukan\n";
+    }
+}
+
+int main() {
+    cout << "\tBINARY SEARCH" << endl;
+    cout << "\nData: ";
+    // Display initial data
+    for (int x = 0; x < 7; x++) {
+        cout << setw(3) << dataArray[x];
+    }
+    cout << endl;
+    cout << "\nMasukkan data yang ingin Anda cari: ";
+    cin >> cari;
+    cout << "\nData diurutkan: ";
+    // Sort data with selection sort
+    selection_sort();
+    // Display data after sorting
+    for (int x = 0; x < 7; x++) {
+        cout << setw(3) << dataArray[x];
+    }
+    cout << endl;
+    binarysearch();
+    _getche();
+    return 0;
+}
 ```
+Program di atas merupakan sebuah program dalam bahasa C++ yang menggunakan algoritma Binary Search untuk mencari keberadaan suatu angka dalam array yang telah diurutkan secara ascending. Program dimulai dengan mendefinisikan sebuah array yang berisi 7 angka. Kemudian, pengguna diminta untuk memasukkan angka yang ingin dicari. Selanjutnya, program menggunakan algoritma Selection Sort untuk mengurutkan array secara ascending. Setelah array diurutkan, program menggunakan algoritma Binary Search untuk mencari keberadaan angka yang diinputkan pengguna dalam array. Jika angka ditemukan, program mencetak indeks pertama di mana angka tersebut ditemukan. Jika tidak, program mencetak pesan bahwa angka tidak ditemukan dalam data.
 
 ## Unguided
 ### 1. Buatlah sebuah program untuk mencari sebuah huruf pada sebuah kalimat yang sudah di input dengan menggunakan Binary Search!
@@ -90,8 +193,8 @@ Program di atas adalah sebuah implementasi pencarian biner (Binary Search) dalam
 
 ### 2. Buatlah sebuah program yang dapat menghitung banyaknya huruf vocal dalam sebuah kalimat!
 ```C++
-// Nama: Ria Wulandari
-// NIM: 2311102173
+//Ria Wulandari
+//2311102173
 
 #include <iostream>
 #include <string>
@@ -176,7 +279,55 @@ Program di atas adalah sebuah program yang menggunakan algoritma pencarian Seque
 ![Screenshot (139)](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/58d4940c-6bda-4f6d-bb80-9e1fe439b859)
 
 #### Kesimpulan :
+Dalam pembahasan ini, kita telah mempelajari tentang dua metode pencarian data yang umum digunakan: Sequential Search dan Binary Search. Masing-masing metode memiliki kelebihan dan kekurangannya sendiri.
 
+##### Sequential Search
+
+Kelebihan:
+
+Sederhana dan mudah dipahami
+
+Tidak memerlukan data yang diurutkan
+
+Efisien untuk data yang kecil
+
+Kekurangan:
+
+Kurang efisien untuk data yang besar
+
+Membutuhkan waktu pencarian yang lebih lama
+
+##### Binary Search
+
+Kelebihan:
+
+Sangat efisien untuk data yang besar
+
+Membutuhkan waktu pencarian yang lebih singkat
+
+Kekurangan:
+
+Membutuhkan data yang diurutkan
+
+Lebih kompleks untuk diimplementasikan
+
+Selain itu, kita juga telah melihat contoh program untuk menghitung jumlah huruf vokal dalam sebuah kalimat dan menghitung berapa banyak angka 4 dalam sebuah data menggunakan Sequential Search. Program-program ini menunjukkan bagaimana algoritma pencarian dapat diterapkan untuk menyelesaikan masalah praktis.
+
+1. Sequential Search cocok untuk data yang kecil dan tidak diurutkan.
+
+2. Binary Search cocok untuk data yang besar dan diurutkan.
+
+3. Algoritma pencarian sangat penting dalam ilmu komputer dan pemrograman.
+
+4. Memahami cara kerja algoritma pencarian yang berbeda memungkinkan kita memilih metode yang tepat untuk menyelesaikan masalah dengan cara yang efisien dan efektif.
+
+Dari unguided 2 :
+Program ini menghitung jumlah huruf vokal dalam sebuah kalimat dengan cara mengiterasi setiap karakter dalam kalimat dan memeriksa apakah karakter tersebut merupakan huruf vokal.
+
+Dari unguided 3
+Program ini menghitung berapa kali angka 4 muncul dalam sebuah data dengan cara mengiterasi setiap elemen dalam data dan memeriksa apakah elemen tersebut sama dengan 4.
+
+Kedua program ini menunjukkan bagaimana algoritma pencarian dapat diterapkan untuk menyelesaikan masalah praktis. Memahami cara kerja algoritma pencarian yang berbeda memungkinkan kita memilih metode yang tepat untuk menyelesaikan masalah dengan cara yang efisien dan efektif.
 
 #### Referensi :
 [1] https://teknik.usni.ac.id/jurnal/NURCHAFID.pdf
