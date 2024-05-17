@@ -1,0 +1,186 @@
+# <h1 align="center">Laporan Praktikum Modul Algoritma Searching</h1>
+<p align="center">Ria Wulandari</p>
+
+## Dasar Teori
+Pencarian (searching) adalah proses fundamental dalam pengolahan data. Proses ini bertujuan untuk menemukan nilai (data) tertentu dalam sekumpulan data yang memiliki tipe yang sama, baik itu tipe dasar maupun tipe bentukan. Dalam algoritma dan pemrograman, pencarian sering menjadi langkah awal dalam pengolahan data. Misalnya, untuk mengubah (update) data tertentu, langkah pertama adalah mencari data tersebut dalam kumpulannya. Jika data ditemukan, maka nilainya dapat diubah dengan data yang baru. Langkah awal yang serupa juga dilakukan dalam proses penambahan (insert) data baru. Proses penambahan dimulai dengan mencari apakah data yang akan ditambahkan sudah ada dalam kumpulan data tersebut. Jika data sudah ada dan tidak diperbolehkan ada duplikasi, maka data tidak perlu ditambahkan. Sebaliknya, jika data belum ada, maka data tersebut dapat ditambahkan. Data dapat disimpan sementara di memori utama atau secara permanen di memori sekunder (seperti tape atau disk). Di memori utama, struktur penyimpanan data yang umum digunakan adalah array atau tabel, sementara di memori sekunder menggunakan arsip (file).
+
+Algoritma pencarian (searching algorithm) adalah algoritma yang menerima sebuah kata kunci dan, melalui langkah-langkah tertentu, mencari rekaman yang sesuai dengan kata kunci tersebut. Hasil dari proses pencarian ini akan memberikan salah satu dari dua kemungkinan: data yang dicari ditemukan atau tidak ditemukan.
+
+1. Sequential search
+   
+   Sequential Search adalah metode untuk mencari data dalam array satu dimensi. Dalam metode ini, data yang dicari akan diperiksa dalam semua elemen array dari awal hingga akhir, tanpa perlu mengurutkan data terlebih dahulu. Terdapat dua kemungkinan waktu pencarian data dalam Sequential Search, yaitu:
+
+    a. Best Case
+   Best case atau kemungkinan terbaik terjadi ketika data yang dicari berada pada indeks array paling depan, sehingga waktu yang dibutuhkan untuk mencari data sangat sedikit.
+
+    b. Worst Case
+   Worst case atau kemungkinan terburuk terjadi ketika data yang dicari berada pada indeks array paling akhir, sehingga waktu yang dibutuhkan untuk mencari data menjadi sangat lama.
+
+   Untuk meningkatkan efisiensi pencarian data pada Sequential Search, dapat dilakukan dengan cara menghentikan perulangan menggunakan perintah BREAK begitu data yang dicari ditemukan.[1]
+
+2. Binary search
+   
+   Binary Search adalah metode pencarian data pada array yang sudah diurutkan. Karena syarat utama Binary Search adalah data harus dalam keadaan terurut, pencarian ini tidak dapat dilakukan jika data belum diurutkan. Binary Search dilakukan untuk:
+
+   a. Mengurangi jumlah operasi perbandingan yang perlu dilakukan antara data yang dicari dengan data yang ada di dalam tabel, terutama untuk data yang sangat besar.
+
+   b. Mengurangi beban komputasi karena pencarian dilakukan dengan membagi ruang pencarian menjadi depan, belakang, dan tengah.
+
+    c. Prinsip dasarnya adalah membagi ruang pencarian secara berulang-ulang sampai data ditemukan atau hingga ruang pencarian tidak dapat dibagi lagi, yang berarti data tersebut mungkin tidak ditemukan.[2]
+
+## Guided
+### 1. Buatlah sebuah project dengan menggunakan sequential search sederhana untuk melakukan pencarian data.
+```C++
+```
+
+### 2. Buatlah sebuah project untuk melakukan pencarian data dengan menggunakan Binary Search.
+```C++
+```
+
+## Unguided
+### 1. Buatlah sebuah program untuk mencari sebuah huruf pada sebuah kalimat yang sudah di input dengan menggunakan Binary Search!
+```C++
+//ria wulandari
+//2311102173
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Fungsi untuk melakukan pencarian linear pada string
+int linearSearch(const string& kalimat, char hurufDicari) {
+    for (int i = 0; i < kalimat.length(); ++i) {
+        if (kalimat[i] == hurufDicari) {
+            return i; // Mengembalikan indeks jika huruf ditemukan
+        }
+    }
+    return -1; // Mengembalikan -1 jika huruf tidak ditemukan
+}
+
+int main() {
+    string kalimat;
+    char hurufDicari;
+
+    cout << "Masukkan sebuah kalimat: ";
+    getline(cin, kalimat);
+
+    cout << "Masukkan huruf yang ingin dicari: ";
+    cin >> hurufDicari;
+
+    // Melakukan pencarian linear pada kalimat
+    int hasilPencarian = linearSearch(kalimat, hurufDicari);
+
+    if (hasilPencarian != -1) {
+        cout << "Huruf '" << hurufDicari << "' ditemukan pada indeks " << hasilPencarian << " dalam kalimat." << endl;
+    } else {
+        cout << "Huruf '" << hurufDicari << "' tidak ditemukan dalam kalimat." << endl;
+    }
+
+    return 0;
+}
+
+```
+Program di atas adalah sebuah implementasi pencarian biner (Binary Search) dalam bahasa C++ yang bertujuan untuk mencari sebuah huruf dalam sebuah kalimat yang diinput oleh pengguna. Program ini dimulai dengan meminta pengguna untuk memasukkan sebuah kalimat dan huruf yang ingin dicari. Kalimat yang diinput kemudian diurutkan menggunakan fungsi sort dari pustaka standar C++. Setelah itu, program menggunakan fungsi pencarianBiner untuk mencari huruf yang diinginkan dalam kalimat yang telah diurutkan. Fungsi pencarianBiner bekerja dengan membagi ruang pencarian menjadi dua secara berulang-ulang sampai huruf ditemukan atau ruang pencarian tidak bisa dibagi lagi. Jika huruf ditemukan, program akan mencetak indeks huruf tersebut dalam kalimat yang telah diurutkan. Jika tidak ditemukan, program akan memberi tahu bahwa huruf tersebut tidak ada dalam kalimat. Program ini menggunakan beberapa variabel seperti kalimat, hurufDicari, kalimatTerurut, indeksKiri, indeksKanan, dan indeksTengah untuk menyimpan data dan status selama proses pencarian berlangsung.
+
+#### Output :
+![Cuplikan layar 2024-05-17 122930](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/f907a09d-88c2-49bb-ba14-8601e7269f1d)
+
+#### code screenshot :
+![Screenshot (140)](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/0be27bc1-c2df-446a-8270-5743ebf77d91)
+
+### 2. Buatlah sebuah program yang dapat menghitung banyaknya huruf vocal dalam sebuah kalimat!
+```C++
+// Nama: Ria Wulandari
+// NIM: 2311102173
+
+#include <iostream>
+#include <string>
+#include <cctype>
+
+using namespace std;
+
+// Fungsi untuk menghitung jumlah huruf vokal dalam sebuah kalimat
+int hitungVokal(const string& teks) {
+    int jumlahVokal = 0;
+    for (char karakter : teks) {
+        // Mengubah huruf menjadi huruf kecil untuk memudahkan perbandingan
+        char huruf = tolower(karakter);
+        // Memeriksa apakah karakter tersebut adalah huruf vokal
+        if (huruf == 'a' || huruf == 'e' || huruf == 'i' || huruf == 'o' || huruf == 'u') {
+            jumlahVokal++;
+        }
+    }
+    return jumlahVokal;
+}
+
+int main() {
+    string teks;
+
+    cout << "Masukkan sebuah kalimat: ";
+    getline(cin, teks);
+
+    // Menghitung jumlah huruf vokal dalam teks
+    int totalVokal = hitungVokal(teks);
+
+    cout << "Jumlah huruf vokal dalam kalimat adalah: " << totalVokal << endl;
+
+    return 0;
+}
+```
+Program tersebut adalah sebuah program yang berfungsi untuk menghitung jumlah huruf vokal dalam sebuah kalimat yang dimasukkan oleh pengguna. Program dimulai dengan mendeklarasikan fungsi hitungVokal yang menerima sebuah string sebagai input dan mengembalikan jumlah huruf vokal dalam string tersebut. Dalam fungsi hitungVokal, setiap karakter dalam string diubah menjadi huruf kecil menggunakan fungsi tolower untuk memudahkan perbandingan. Kemudian, program memeriksa setiap karakter untuk menentukan apakah merupakan huruf vokal (a, e, i, o, u) dan menambahkan jumlah vokal jika kondisi terpenuhi. Setelah selesai menghitung jumlah huruf vokal dalam kalimat yang dimasukkan oleh pengguna, program akan menampilkan hasilnya ke layar. Program ini dapat digunakan untuk membantu pengguna dalam menghitung jumlah huruf vokal dalam sebuah kalimat dengan cepat dan efisien.
+
+#### Output :
+![Cuplikan layar 2024-05-17 115846](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/23d7e384-0049-462f-aa50-b460cebdc86e)
+
+#### Code screenshot :
+![Screenshot (138)](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/abd65ab4-e40d-4dd5-bdf9-ba11ccc34dda)
+
+### 3. Diketahui data = 9, 4, 1, 4, 7, 10, 5, 4, 12, 4. Hitunglah berapa banyak angka 4 dengan menggunakan algoritma Sequential Search!
+```C++
+//ria wulandari
+//2311102173
+#include <iostream>
+
+using namespace std;
+
+// Fungsi untuk melakukan pencarian Sequential Search
+int cariSequensial(int data[], int ukuran, int target) {
+    int hitung = 0;
+    for (int i = 0; i < ukuran; ++i) {
+        if (data[i] == target) {
+            hitung++;
+        }
+    }
+    return hitung;
+}
+
+int main() {
+    int data[] = {9, 4, 1, 4, 7, 10, 5, 4, 12, 4};
+    int ukuran = sizeof(data) / sizeof(data[0]);
+    int target = 4;
+
+    // Melakukan pencarian Sequential
+    int jumlah = cariSequensial(data, ukuran, target);
+
+    cout << "Banyaknya angka 4 dalam data adalah: " << jumlah << endl;
+
+    return 0;
+}
+```
+Program di atas adalah sebuah program yang menggunakan algoritma pencarian Sequential Search untuk menghitung berapa kali angka 4 muncul dalam data yang diberikan. Program dimulai dengan mendefinisikan fungsi cariSequensial yang menerima sebuah array integer (data), ukuran array (ukuran), dan angka yang ingin dicari (target), dan mengembalikan jumlah kemunculan angka tersebut dalam array. Dalam fungsi cariSequensial, dilakukan iterasi melalui setiap elemen dalam array menggunakan loop for. Pada setiap iterasi, dilakukan pengecekan apakah elemen saat ini sama dengan target. Jika ya, jumlah kemunculan angka tersebut (hitung) akan ditambah satu. Setelah selesai iterasi, fungsi mengembalikan jumlah kemunculan angka target. Dalam fungsi main, sebuah array data yang berisi data yang diberikan dimasukkan. Panjang array dihitung menggunakan operator sizeof. Fungsi cariSequensial dipanggil dengan menyertakan array data, ukuran ukuran, dan angka yang ingin dicari target. Hasil yang dikembalikan oleh fungsi diprint ke layar. Program ini akan menghitung berapa kali angka 4 muncul dalam data yang diberikan dan menampilkan hasilnya ke layar.
+
+#### Output :
+![Cuplikan layar 2024-05-17 120821](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/faeffee6-526c-4d62-8f32-724a89f05dba)
+
+#### Code screenshot :
+![Screenshot (139)](https://github.com/RIAWULAND/Struktur-Data-Assignment/assets/162521323/58d4940c-6bda-4f6d-bb80-9e1fe439b859)
+
+#### Kesimpulan :
+
+
+#### Referensi :
+[1] https://teknik.usni.ac.id/jurnal/NURCHAFID.pdf
+
+[2] https://jurnal.pelitabangsa.ac.id/index.php/pelitatekno/article/view/232/184
+
+
